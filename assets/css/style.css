@@ -1068,11 +1068,24 @@ section {
   border: 2px solid #fff;
   color: #fff;
 }
-
 .cta .cta-btn:hover {
   background: #fff;
   color: #2487ce;
 }
+.cta .cta-btn:hover span {
+ display: none;
+}
+.cta .cta-boy:hover::before {
+  background: #fff;
+  color: #2487ce;
+  content: "+91-80113456259";
+}
+.cta .cta-girl:hover::before {
+  background: #fff;
+  color: #2487ce;
+  content: "+91-9956787876";
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio
@@ -1792,7 +1805,7 @@ section {
   color: #444444;
   font-size: 14px;
   background: #f8fbfe;
-  box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.08);
+  box-shadow: 0px 2px 15px rgba(18, 66, 101, 0.2);
 }
 
 #footer .footer-top {
