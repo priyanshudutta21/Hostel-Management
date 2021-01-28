@@ -71,7 +71,7 @@ $davl = $row[0];
         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-blue order-card">
                 <div class="card-block">
-                    <h6 class="m-b-20">TOTAL HOSTALS</h6>
+                    <h6 class="m-b-20">TOTAL HOSTELS</h6>
                     <h2 class="text-right">
                         <i class="fa fa-cart-plus f-left"></i>
                         <span><?php echo $thostel; ?></span></h2>
@@ -136,6 +136,7 @@ $davl = $row[0];
                             <thead>
                                 <th>Hostel Name</th>
                                 <th>Room Type</th>
+                                <th>Room no</th>
                                 <th>price</th>
                             </thead>
                             <tbody>
@@ -149,6 +150,7 @@ $davl = $row[0];
                                             <tr>
                                                 <td>'.$row["hname"].'</td>
                                                 <td class="font-weight-bold text-success">'.$row["rtype"].'</td>
+                                                <td class="font-weight-bold text-primary">'.$row["rno"].'</td>
                                                 <td class="font-weight-bold text-danger">'.$row["rprice"].'</td>
                                             </tr>';
                                             }

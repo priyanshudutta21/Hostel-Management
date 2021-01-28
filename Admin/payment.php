@@ -35,7 +35,7 @@ if(isset($_REQUEST['pyment'])){
         $red = "<script>
         setTimeout(function(){
            window.location.href = 'students.php';
-        }, 2000);
+        }, 1000);
         </script>";
     }
     
