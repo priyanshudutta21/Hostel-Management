@@ -35,9 +35,10 @@ if(isset($_REQUEST['assigns']))
         $gen = $_REQUEST['gender'];
         $course = $_REQUEST['course'];
         $rno = $_REQUEST['rno'];
+
         $hname = $_REQUEST['hst'];
         $rType = $_REQUEST['rtype'];
-        $RoomN = $_REQUEST['RoomNo'];
+        $RoomN = $_REQUEST['roomno'];
 
         $Bfrm = $_REQUEST['bmonthFr'].'-01';
         $Bto = $_REQUEST['bmonthTo'] .'-31';
@@ -73,20 +74,29 @@ if(isset($_REQUEST['assigns']))
         $cdata = $conn->query($check_sql);
         $retdata = mysqli_num_rows($cdata);
 
-        $check_sql2 = "SELECT STATUS FROM `room` WHERE hname='{$hname}' and rno = '{$RoomN}'";
+        $check_sql2 = "SELECT * FROM `room` WHERE hname='{$hname}' and rno = '{$RoomN}'";
         $cdata2 = $conn->query($check_sql2);
-        $retdata2 = mysqli_fetch_assoc($cdata2);
-
-        if( $retdata2['STATUS'] == '1')
+        $retdata2 = $cdata2->fetch_assoc();
+        // echo $check_sql2;
+        // echo $retdata2['status'];
+        // die();
+        if( $retdata2["status"] == 1)
         {
             $msg = "Student already exists or Room Booked Already";
         }
         else 
         {
-            // add data
-            $sql ="UPDATE `student` SET `sname`='$sname',`phn`='$phn',`lgname`='$lgur',`fname`='$fname',`addrs`='$add',`gender`='$gen',`course`='$course',`roll`='$rno',`hname`='$hname',`RoomTyp`='$rType',`RoomNo`='$RoomN',`Bfrm`='$Bfrm',`Bto`='$Bto',`bmonth`='$month',`TotalPayment`='$totpayment',`image`='$photo_name' WHERE sid = '$id'";
-            $conn->query($sql);
-            $msg = "Student Assigned succesfully";
+           // add data
+           $sql ="UPDATE `student` SET `sname`='$sname',`phn`='$phn',`lgname`='$lgur',`fname`='$fname',`addrs`='$add',`gender`='$gen',`course`='$course',`roll`='$rno',`hname`='$hname',`RoomTyp`='$rType',`RoomNo`='$RoomN',`Bfrm`='$Bfrm',`Bto`='$Bto',`bmonth`='$month',`TotalPayment`='$totpayment',`image`='$photo_name' WHERE sid = '$id'";
+           $conn->query($sql);
+           $msg = "Student updated succesfully";
+
+           $red = "<script>
+        setTimeout(function(){
+           window.location.href = 'students.php';
+        }, 1000);
+        </script>";
+            
         }
     
 
@@ -107,7 +117,7 @@ if(isset($_REQUEST['assigns']))
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Assign Students</h1>
+        <h1 class="h3 mb-0 text-gray-800">Update Students Details</h1>
     </div>
     <div class="row mb-4">
         <div class="col">
@@ -210,7 +220,7 @@ if(isset($_REQUEST['assigns']))
             <div class="form-group">
                 <label for="rno">RollNo</label>
                 <input
-                    type="number"
+                    type="text"
                     class="form-control"
                     name="rno"
                     id="rno"
@@ -222,7 +232,7 @@ if(isset($_REQUEST['assigns']))
                     class="form-control"
                     name="hst"
                     value="<?php if(isset($row['hname'])) {echo $row['hname']; }?>"
-                    readonly="readonly">
+                   >
                     <?php
                 $sql = "SELECT * FROM `hostel`";
                 $data = $conn->query($sql);
@@ -238,7 +248,7 @@ if(isset($_REQUEST['assigns']))
                     class="form-control"
                     name="rtype"
                     value="<?php if(isset($row['RoomTyp'])) {echo $row['RoomTyp']; }?>"
-                    readonly="readonly">
+                    >
                     <option >Single</option>
                     <option>Double</option>
                 </select>
@@ -250,9 +260,9 @@ if(isset($_REQUEST['assigns']))
                     type="number"
                     name="roomno"
                     class="form-control"
-                    id=""
+                    id="roomno"
                     value="<?php if(isset($row['RoomNo'])) {echo $row['RoomNo']; }?>"
-                    readonly="readonly">
+                   >
                     
             </div>
             <div class="form-group">
@@ -275,12 +285,13 @@ if(isset($_REQUEST['assigns']))
             <div class="text-center">
                 <input
                     class="btn align-center btn-success"
-                    value="Assign Student"
+                    value="Update Student"
                     name="assigns"
                     type="submit"></input>
                 <a href="students.php" class="btn align-center btn-danger">Back</a>
             </div>
         </form>
     </div>
-
+    
+    <?php echo $red; ?>
     <?php include('include/footer.php') ?>

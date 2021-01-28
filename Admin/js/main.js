@@ -31,7 +31,10 @@ $(document).ready(function(){
 $(document).ready(function() {
     $('.myTable').DataTable({
         "scrollY": 200,
-        "scrollY": true
+        "scrollY": true,
+        "bScrollInfinite": true,
+        "bScrollCollapse": true,
+        lengthMenu:[[10,25,50,-1], [10,25,50,"All"]]
     });
 } );
 
@@ -39,14 +42,18 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('.hostalTable').DataTable({
         "scrollY": 200,
-        "scrollY": true
+        "scrollY": true,
+       
     });
 } );
 // Room tables
 $(document).ready(function() {
     $('.roomTable').DataTable({
         "scrollY": 200,
-        "scrollY": true
+        "scrollY": true,
+        "bScrollInfinite": true,
+        "bScrollCollapse": true,
+        lengthMenu:[[-1], ["All"]]
     });
 } );
 // Course tables
@@ -56,12 +63,15 @@ $(document).ready(function() {
         "scrollY": true
     });
 } );
-// dashboard tables
+
+// dashboard room tables
 $(document).ready(function() {
     $('.roomdetail').DataTable({
         "scrollY": 200,
-        "scrollY": true,
-        lengthMenu:[[4],[4]]
+        "bScrollInfinite": true,
+        "bScrollCollapse": true,
+        paging: false,
+        lengthMenu:[[-1], ["All"]]
     });
 } );
 

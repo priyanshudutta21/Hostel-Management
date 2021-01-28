@@ -118,6 +118,11 @@ if(isset($_REQUEST['assigns']))
             }
 
             $msg = "Student Assigned succesfully";
+            $red = "<script>
+        setTimeout(function(){
+           window.location.href = 'students.php';
+        }, 1000);
+        </script>";
         }
     } 
 
@@ -154,11 +159,11 @@ if(isset($_REQUEST['assigns']))
             </div>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" name="Sname" id="Sname">
+                <input type="text" class="form-control" name="Sname" id="Sname" required>
             </div>
             <div class="form-group">
                 <label for="name">Phone</label>
-                <input type="number" class="form-control" name="phn" id="phn">
+                <input type="number" class="form-control" name="phn" id="phn" required>
             </div>
             <div class="form-group">
                 <label for="name">Local Gurdain</label>
@@ -166,7 +171,7 @@ if(isset($_REQUEST['assigns']))
             </div>
             <div class="form-group">
                 <label for="name">Father</label>
-                <input type="text" class="form-control" name="fname" id="fname">
+                <input type="text" class="form-control" name="fname" id="fname" required>
             </div>
             <div class="form-group">
                 <label for="name">Address</label>
@@ -175,12 +180,12 @@ if(isset($_REQUEST['assigns']))
                     class="form-control"
                     name="add"
                     id="add"
-                    style="height: 80px;">
+                    style="height: 80px;" required>
             </div>
             <div class="form-group">
                 <label for="rtype">Gender</label>
-                <select class="form-control" name="gender" selected="Female">
-                    <option value="av" selected="selected" disabled="disabled" hidden="hidden">Select Gender</option>
+                <select class="form-control" name="gender" >
+                    <option selected="selected" disabled="disabled" hidden="hidden">Select Gender</option>
                     <option name="sing">Male</option>
                     <option name="doub">Female</option>
                 </select>
@@ -188,7 +193,7 @@ if(isset($_REQUEST['assigns']))
 
             <div class="form-group">
                 <label for="course">Course</label>
-                <select class="form-control" name="course">
+                <select class="form-control" name="course" required>
                     <?php
             $sql = "SELECT * FROM `course`";
             $data = $conn->query($sql);
@@ -207,7 +212,7 @@ if(isset($_REQUEST['assigns']))
             ?>
             <div class="form-group">
                 <label for="rno">RollNo</label>
-                <input type="number" class="form-control" name="rno" id="rno">
+                <input type="text" class="form-control" name="rno" id="rno" required>
             </div>
             <div class="form-group">
                 <label for="name">Hostel</label>
@@ -239,9 +244,9 @@ if(isset($_REQUEST['assigns']))
             <div class="form-group">
                 <label for="bmonthFr">Book Month</label><br>
                 <label >From</label>
-                <input type="month" class="form-control" name="bmonthFr" id="bmonthFr">
+                <input type="month" class="form-control" name="bmonthFr" id="bmonthFr" value="<?php echo date("Y-m");?>" required>
                 <label for="bmonthTo">To</label>
-                <input type="month" class="form-control" name="bmonthTo" id="bmonthTo">
+                <input type="month" class="form-control" name="bmonthTo" id="bmonthTo" value="<?php echo date("Y-m");?>" required>
             </div>
             <div class="text-center">
                 <input
@@ -253,5 +258,5 @@ if(isset($_REQUEST['assigns']))
             </div>
         </form>
     </div>
-
+<?php echo $red; ?>
     <?php include('include/footer.php') ?>

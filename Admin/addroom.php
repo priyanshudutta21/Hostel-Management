@@ -5,8 +5,8 @@ include('include/header.php');
 $msg = '';
 
 if(isset($_REQUEST['adroom'])){
-
-    $hname = $_REQUEST['hname'];
+    
+    $hname = $_REQUEST['shname'];
     $roomT = $_REQUEST['rtype'];
     $RoomNo = $_REQUEST['rno'];
     
@@ -28,7 +28,7 @@ if(isset($_REQUEST['adroom'])){
 
     // check room already added or not
 
-    $chSql = "SELECT * FROM `room` where rno = '$RoomNo'";
+    $chSql = "SELECT * FROM `room` where rno = '$RoomNo' and hname = '$hname'";
     $cdata = $conn->query($chSql);
     $rdata = mysqli_num_rows($cdata);
 
@@ -73,14 +73,18 @@ if(isset($_REQUEST['adroom'])){
     <div class="card rounded shadow m-2">
         <form class="p-4" action="" method="post">
             <div class="form-group">
-                <label for="name">Hostel Name</label>
-                <select name="hname" class="form-control" id="hname">
-                    <?php
+                <label for="name">Available Hostel</label>
+                <select name="hname" class="form-control" id="hname" >
+
+             <?php
             $sql = "SELECT * FROM `hostel`";
             $data = $conn->query($sql);
             while ($row = $data->fetch_assoc()){
-            echo '<option name="hstname">'.$row["hname"].'</option>';
-            } 
+
+            echo '<option>'.$row["hname"].'</option>';
+            
+            }
+
             ?>
                 </select>
                 <input
@@ -94,14 +98,17 @@ if(isset($_REQUEST['adroom'])){
                 <?php
            if(isset($_REQUEST['sethostel'])){
 
-            $hn = $_REQUEST['hname'];
+               $hn = $_REQUEST['hname'];
 
                $sq = "SELECT * From `hostel` where hname = '{$hn}'";
                $data = $conn->query($sq);
                $row = $data->fetch_assoc();
                $totroom = $row["droom"] + $row["sroom"];
-           }
+
                echo '
+                <label for="name">Hostel</label>
+                <input type="text" name="shname" class="form-control" value="'.$row["hname"].'" readonly >
+
                 <label for="name">Total single Room</label>
                 <input type="number"  class="form-control" value='.$row["sroom"].' readonly >
 
@@ -110,6 +117,8 @@ if(isset($_REQUEST['adroom'])){
 
                 <label for="name">Total Room </label>
                 <input type="number"  class="form-control"  value='.$totroom.' readonly >';
+           }
+               
            
            ?>
 

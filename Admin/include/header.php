@@ -82,12 +82,7 @@ define('simg' , "img/student_img/");
                     <i class="fas fa-fw fa-bed"></i>
                     <span>Rooms</span></a>
             </li>
-            <!-- nav Item - Course -->
-            <li class="nav-item">
-                <a class="nav-link  <?php if(PAGE == 'course') { echo 'active'; } ?>" href="course.php">
-                    <i class="fas fa-fw fa-book"></i>
-                    <span>Course</span></a>
-            </li>
+            
             <!-- Nav Item - student -->
             <li class="nav-item">
                 <a class="nav-link  <?php if(PAGE == 'student') { echo 'active'; } ?>" href="students.php">
@@ -95,6 +90,12 @@ define('simg' , "img/student_img/");
                     <span>Students</span></a>
             </li>
             
+            <!-- nav Item - Course -->
+            <li class="nav-item">
+                <a class="nav-link  <?php if(PAGE == 'course') { echo 'active'; } ?>" href="course.php">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Course</span></a>
+            </li>
             <!-- nav Item - settings -->
             <li class="nav-item">
                 <a class="nav-link  <?php if(PAGE == 'settings') { echo 'active'; } ?>" href="settings.php">
