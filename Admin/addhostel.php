@@ -18,7 +18,7 @@ if(isset($_REQUEST['addhostel'])){
         
     }
     else{
-       $sql = "INSERT INTO `hostel`(`hname`, `hcap`, `sroom`, `droom`, `sroomprice`, `droomprice`) VALUES ('$name','$cap','$sr','$dr','$srp','$dr')";
+       $sql = "INSERT INTO `hostel`(`hname`, `hcap`, `sroom`, `droom`, `sroomprice`, `droomprice`) VALUES ('$name','$cap','$sr','$dr','$srp','$drp')";
         if($conn->query($sql)== TRUE){
             $msg = 'Hostel added succesfully';
         }
@@ -54,11 +54,11 @@ if(isset($_REQUEST['addhostel'])){
                 <input type="text" class="form-control" name="name" id="name">
             </div>
             <div class="form-group">
-                <label for="name">Single Room</label>
+                <label for="name">Single Bed Room</label>
                 <input type="number" class="form-control" name="Sroom" id="Sroom">
             </div>
             <div class="form-group">
-                <label for="name">Double Room</label>
+                <label for="name">Double Bed Room</label>
                 <input type="number" class="form-control" name="Droom" id="Droom">
             </div>
             <div class="form-group">
@@ -80,12 +80,12 @@ if(isset($_REQUEST['addhostel'])){
                     readonly="readonly">
             </div>
             <div class="form-group">
-                <label for="name">Single Room Price(pm)</label>
-                <input type="text" class="form-control" name="SrP" id="SrP">
+                <label for="name">Single Room Price(per month)</label>
+                <input type="number" class="form-control" name="SrP" id="SrP">
             </div>
             <div class="form-group">
-                <label for="name">Double Room Price(pm)</label>
-                <input type="text" class="form-control" name="DrP" id="DrP">
+                <label for="name">Double Room Price(per month)</label>
+                <input type="number" class="form-control" name="DrP" id="DrP">
             </div>
 
             <div class="text-center">
