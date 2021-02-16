@@ -79,7 +79,7 @@ if(isset($_REQUEST['updatehstl'])){
                     value="<?php if(isset($row['hname'])) {echo $row['hname']; }?>">
             </div>
             <div class="form-group">
-                <label for="name">Single Room</label>
+                <label for="name">Single Bed Room</label>
                 <input
                     type="number"
                     class="form-control"
@@ -88,7 +88,7 @@ if(isset($_REQUEST['updatehstl'])){
                     value="<?php if(isset($row['sroom'])) {echo $row['sroom']; }?>">
             </div>
             <div class="form-group">
-                <label for="name">Double Room</label>
+                <label for="name">Double Bed Room</label>
                 <input
                     type="number"
                     class="form-control"
@@ -115,7 +115,7 @@ if(isset($_REQUEST['updatehstl'])){
                     readonly="readonly">
             </div>
             <div class="form-group">
-                <label for="name">Single Room Price(pm)</label>
+                <label for="name">Single Bed Room Price(pm)</label>
                 <input
                     type="text"
                     class="form-control"
@@ -124,7 +124,7 @@ if(isset($_REQUEST['updatehstl'])){
                     value="<?php if(isset($row['sroomprice'])) {echo $row['sroomprice']; }?>">
             </div>
             <div class="form-group">
-                <label for="name">Double Room Price(pm)</label>
+                <label for="name">Double Bed Room Price(pm)</label>
                 <input
                     type="text"
                     class="form-control"

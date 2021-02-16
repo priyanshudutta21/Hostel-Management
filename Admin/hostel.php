@@ -27,7 +27,7 @@ include('include/header.php');
         <thead class="text-center">
             <th>NAME</th>
             <th>capacity</th>
-            <th>single|Double</th>
+            <th>single Bed/Double Bed</th>
             <th>Room</th>
             <th>Action</th>
         </thead>
@@ -45,7 +45,7 @@ include('include/header.php');
             <tr>
                 <td>'.$row["hname"].'</td>
                 <td>'.$row["hcap"].'</td>
-                <td>'.$row["sroom"].'/'.$row["droom"].'</td>
+                <td>'.$row["sroom"].' / '.$row["droom"].'</td>
                 <td>'.$totalroom.'</td>
                 
                 <td>

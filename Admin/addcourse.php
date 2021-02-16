@@ -5,15 +5,14 @@ $msg ='';
 if(isset($_REQUEST['AddCourse']))
 {
     $cname = $_REQUEST['cname'];
-    $cyear = $_REQUEST['cyear'];
 
-    if(($_REQUEST['cname'] == "") || ($_REQUEST['cyear'] == "") )
+    if(($_REQUEST['cname'] == ""))
     {
         $msg = 'Fill all details';
         
     }
     else{
-       $sql = "INSERT INTO `course`(`cname`, `cyear`) VALUES ('$cname','$cyear')";
+       $sql = "INSERT INTO `course`(`cname`) VALUES ('$cname')";
         if($conn->query($sql)== TRUE)
         {
             $msg = 'course added succesfully';
@@ -44,11 +43,6 @@ if(isset($_REQUEST['AddCourse']))
            <label for="name">Course Name</label>
            <input type="text"  class="form-control" name="cname" id="cname">
        </div>
-       <div class="form-group">
-           <label for="name">Course Year</label>
-           <input type="number"  class="form-control" name="cyear" id="cyear">
-       </div>
-       
        <div class="text-center">
        <input class="btn align-center btn-success" type="submit" value="ADD COURSE" name="AddCourse"></input>
        <a href="course.php" class="btn align-center btn-danger">Close</a>

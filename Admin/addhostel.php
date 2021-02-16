@@ -80,11 +80,11 @@ if(isset($_REQUEST['addhostel'])){
                     readonly="readonly">
             </div>
             <div class="form-group">
-                <label for="name">Single Room Price(per month)</label>
+                <label for="name">Single Bed Room Price(per month)</label>
                 <input type="number" class="form-control" name="SrP" id="SrP">
             </div>
             <div class="form-group">
-                <label for="name">Double Room Price(per month)</label>
+                <label for="name">Double Bed Room Price(per month)</label>
                 <input type="number" class="form-control" name="DrP" id="DrP">
             </div>
 

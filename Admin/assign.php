@@ -223,7 +223,7 @@ if(isset($_REQUEST['assigns']))
                     readonly="readonly">
             </div>
             <div class="form-group">
-                <label for="rtype">Room Type</label>
+                <label for="rtype">Bed Type</label>
                 <input
                     class="form-control"
                     name="rtype"

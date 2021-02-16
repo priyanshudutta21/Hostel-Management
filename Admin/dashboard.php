@@ -73,7 +73,7 @@ $davl = $row[0];
                 <div class="card-block">
                     <h6 class="m-b-20">TOTAL HOSTELS</h6>
                     <h2 class="text-right">
-                        <i class="fa fa-cart-plus f-left"></i>
+                        <i class="fa fa-building f-left"></i>
                         <span><?php echo $thostel; ?></span></h2>
                     <p class="m-b-0">total capacity<span class="f-right"><?php echo $tcap; ?></span></p>
                 </div>
@@ -83,22 +83,22 @@ $davl = $row[0];
         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-green order-card">
                 <div class="card-block">
-                    <h6 class="m-b-20">students</h6>
+                    <h6 class="m-b-20">Total Students</h6>
                     <h2 class="text-right">
                         <i class="fa fa-rocket f-left"></i>
                         <span><?php echo $tstudent; ?></span></h2>
-                    <p class="m-b-0">Total rooms<span class="f-right"><?php echo $troom; ?></span></p>
+                    <p class="m-b-0">Total Available rooms<span class="f-right"><?php echo $troom; ?></span></p>
                 </div>
             </div>
         </div>
         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-pink order-card">
                 <div class="card-block">
-                    <h6 class="m-b-20">Single Room</h6>
+                    <h6 class="m-b-20">Single Bed Room</h6>
                     <h2 class="text-right">
                         <i class="fa fa-credit-card f-left"></i>
                         <span><?php echo $sbed; ?></span></h2>
-                    <p class="m-b-0">Available
+                    <p class="m-b-0">Available Bed
                         <span class="f-right"><?php echo $savl; ?></span></p>
                 </div>
             </div>
@@ -106,11 +106,11 @@ $davl = $row[0];
         <div class="col-md-4 col-xl-3">
             <div class="card bg-c-yellow order-card">
                 <div class="card-block">
-                    <h6 class="m-b-20">Double Room</h6>
+                    <h6 class="m-b-20">Double Bed Room</h6>
                     <h2 class="text-right">
                         <i class="fa fa-credit-card f-left"></i>
                         <span><?php echo $dbed; ?></span></h2>
-                    <p class="m-b-0">Available<span class="f-right"><?php echo $davl; ?></span></p>
+                    <p class="m-b-0">Available Bed<span class="f-right"><?php echo $davl; ?></span></p>
                 </div>
             </div>
         </div>
@@ -132,6 +132,7 @@ $davl = $row[0];
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="chart-area">
+                        
                         <table class="table roomdetail" style="font-size: 12px;">
                             <thead>
                                 <th>Hostel Name</th>
@@ -149,7 +150,7 @@ $davl = $row[0];
                                             echo'
                                             <tr>
                                                 <td>'.$row["hname"].'</td>
-                                                <td class="font-weight-bold text-success">'.$row["rtype"].'</td>
+                                                <td class="font-weight-bold text-success">'.$row["rtype"].' Bed</td>
                                                 <td class="font-weight-bold text-primary">'.$row["rno"].'</td>
                                                 <td class="font-weight-bold text-danger">'.$row["rprice"].'</td>
                                             </tr>';

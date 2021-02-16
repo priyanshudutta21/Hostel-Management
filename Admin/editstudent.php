@@ -243,7 +243,7 @@ if(isset($_REQUEST['assigns']))
                 </select>
             </div>
             <div class="form-group">
-                <label for="rtype">Room Type</label>
+                <label for="rtype">Bed Type</label>
                 <select
                     class="form-control"
                     name="rtype"

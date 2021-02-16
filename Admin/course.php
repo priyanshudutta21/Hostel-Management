@@ -22,7 +22,6 @@ include('include/header.php');
     <table class="table text-center courseTable">
         <thead>
             <th>Course</th>
-            <th>Course Duration(year)</th>
             <th>action</th>
         </thead>
         <tbody class="text-center">
@@ -34,7 +33,6 @@ include('include/header.php');
             echo '
             <tr>
                 <td>'.$row['cname'].'</td>
-                <td>'.$row['cyear'].'</td>
                 <td>
                
 

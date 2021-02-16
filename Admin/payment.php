@@ -92,7 +92,7 @@ if(isset($_REQUEST['pyment'])){
            <input class="form-control" name="hostelname" value = "<?php if(isset($row['hname'])) {echo $row['hname']; }?>" readonly>
        </div>
        <div class="form-group">
-           <label for="name">Room Type</label>
+           <label for="name">Bed Type</label>
            <input class="form-control" name="roomtype" value = "<?php if(isset($row['RoomTyp'])) {echo $row['RoomTyp']; }?>" readonly>
     
        </div>
@@ -114,7 +114,7 @@ if(isset($_REQUEST['pyment'])){
            <input type="number"  class="form-control" name="pfee" id="pfee" readonly >
        </div>
        <div class="form-group">
-        <label for="name">Pending fee [Pay now]</label>
+        <label for="name">Payment [Pay now]</label>
         <input type="text"  class="form-control" name="cpay" required>
     </div>
        <div class="text-center">

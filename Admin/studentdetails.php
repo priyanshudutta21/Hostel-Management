@@ -116,7 +116,7 @@ include('include/header.php');
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Room Type</label>
+                                                <label>Bed Type</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p  class="text-primary" >'.$row["RoomTyp"].'</p>

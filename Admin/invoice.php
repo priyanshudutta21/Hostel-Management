@@ -76,7 +76,8 @@ if(isset($_POST['bill']))
                                 <img src="img/logo.png" style="width: 150px; height:60px;">
                                 </div>
                                 <div class="col-md-6 text-right">
-                                <p class="text-dark font-weight-bold">Date: <?php echo $date; ?></p>
+                                <p class="text-dark font-weight-bold">Date: <?php echo date("d-m-Y"); ?></p>
+                                <p class="text-dark font-weight-bold"><?php echo date("h:ia"); ?></p>
                                 </div>
                             </div>
 
@@ -84,19 +85,15 @@ if(isset($_POST['bill']))
 
                             <div class="row pb-0 px-3">
                                 <div class="col-md-6">
-                                    <p class="font-weight-bold mb-4"><?php echo  date("Y/m/d"); ?></p>
-                                    <p class="font-weight-bold mb-4">Student Information</p>
+                                    <p class="font-weight-bold mb-4"><?php echo $stdname; ?></p>
                                     <p class="mb-1 ">student ID: <span class="font-weight-bold"><?php echo $stdid; ?></span></p>
-                                    <p class="mb-1">Name: <span class="font-weight-bold"><?php echo $stdname; ?></span></p>
                                     <p class="mb-1 ">Roll No: <?php echo $stdroll; ?></p>
-                                    <p class="mb-1 ">Hostel Name: <?php echo $stdhname; ?></p>
+                                    
                                     <p class="mb-1 ">Room No: <?php echo $stdroomno; ?></p>
-                                    <p class="mb-1 ">Last payment date: <?php echo $date; ?></p>
-                                    <p class="mb-1 ">Last payment time: <?php echo $time; ?></p>
-                            
-
+                                    
                                 </div>
-
+                                <p class="mb-1 px-3">Hostel Name: <?php echo $stdhname; ?></p>
+                                <p class="mb-3 px-3 ">Last payment: <?php echo $date; ?> - <?php echo $time; ?></p>
                             </div>
 
                             <div class="row p-2">

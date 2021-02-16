@@ -27,7 +27,7 @@ include('include/header.php');
                                 <thead>
                                     <th>Hostel Name</th>
                                     <th>ROOM No</th>
-                                    <th>Room Type</th>
+                                    <th>Bed Type</th>
                                     <th>price pm</th>
                                     <th>status</th>
                                 </thead>
@@ -44,7 +44,7 @@ include('include/header.php');
                                     <tr>
                                         <td>'.$row["hname"].'</td>
                                         <td>'.$row["rno"].'</td>
-                                        <td>'.$row["rtype"].'</td>
+                                        <td>'.$row["rtype"].' Bed</td>
                                         <td>₹ '.$row["rprice"].'</td>';
                                 if($row["status"] == 0)
                                 {

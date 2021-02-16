@@ -109,10 +109,10 @@ if(isset($_REQUEST['adroom'])){
                 <label for="name">Hostel</label>
                 <input type="text" name="shname" class="form-control" value="'.$row["hname"].'" readonly >
 
-                <label for="name">Total single Room</label>
+                <label for="name">Total single Bed Room</label>
                 <input type="number"  class="form-control" value='.$row["sroom"].' readonly >
 
-                <label for="name">Total Double Room</label>
+                <label for="name">Total Double Bed Room</label>
                 <input type="number"  class="form-control"  value='.$row["droom"].' readonly >
 
                 <label for="name">Total Room </label>
@@ -125,7 +125,7 @@ if(isset($_REQUEST['adroom'])){
             </div>
 
             <div class="form-group">
-                <label for="name">Room Type
+                <label for="name">Bed Type
                 </label>
                 <select
                     name="rtype"
